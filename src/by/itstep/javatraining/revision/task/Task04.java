@@ -39,6 +39,9 @@ package by.itstep.javatraining.revision.task;
 
 public class Task04 {
     public static int task04(int month, int year) {
-        return 0;
+        if (month < 1 || month > 12) return 0;
+        if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12) return 31;
+        if (month == 2 && year % 4 == 0 && year % 100 != 0 || year % 400 == 0) return 29;
+        return month == 2?28:30;
     }
 }
