@@ -32,6 +32,7 @@ package by.itstep.javatraining.revision.task;
 
 public class Task03 {
     public static boolean task03(int year) {
-        return false;
+
+        return year % 400 == 0 || year % 4 == 0 && year % 100 != 0;
     }
 }
