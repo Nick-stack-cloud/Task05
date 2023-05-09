@@ -26,6 +26,15 @@ package by.itstep.javatraining.revision.task;
 
 public class Task01 {
     public static int task01(int a, int b, int c, int d) {
-        return 0;
+        boolean ab = (a == b);
+        boolean ac = (a == c);
+        boolean ad = (a == d);
+        boolean bc = (b == c);
+        boolean bd = (b == d);
+        boolean cd = (c == d);
+
+        return (ab || ac || ad || bc || bd || cd?
+                (ab && ac || ab && ad || ac && ad || bc && bd)?
+                        (ab && bc && cd)?4:3:2:0 );
     }
 }
