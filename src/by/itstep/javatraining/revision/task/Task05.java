@@ -28,6 +28,8 @@ package by.itstep.javatraining.revision.task;
 
 public class Task05 {
     public static int task05(int a, int b, int c) {
-        return 0;
+
+        return a == b || b == c || a == c ?0: a > b && a > c ? Math.max(b, c) :
+                b>c ?Math.max(a,c):Math.max(a,b);
     }
 }
