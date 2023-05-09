@@ -34,6 +34,10 @@ package by.itstep.javatraining.revision.task;
 
 public class Task02 {
     public static String task02(int a, int b, int c, int d) {
-        return "?";
+
+        return b == a + (b - a) && c == b + (b - a) && d == c + (b - a) && b > a ? "Ascending arithmetic progression." :
+                a == b && b == c && c == d ? "Monotonic arithmetic progression." :
+                        b == a - (a - b) && c == b - (a - b) && d == c - (a - b) ? "Descending arithmetic progression." :
+                                "No arithmetic progression.";
     }
 }
