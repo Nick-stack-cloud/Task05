@@ -40,8 +40,69 @@ package by.itstep.javatraining.revision.task;
  *	[output 7]: 02.01.0001
  */
 
+
+
 public class Task08 {
     public static String task08(int day, int month, int year) {
-        return "?";
+        String DAY;
+        String MONTH;
+        String YEAR;
+        if (day < 1 || day > 31 || month < 1 || month > 12 || year < 0) return "Error.";
+
+        if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12) {
+            if (day < 9) DAY = "0" + (day + 1);
+            else DAY = Integer.toString(day + 1);
+            if (day == 31) {
+                DAY = "01";
+                month = month + 1;
+            }
+
+        }
+       else if (month == 4 || month == 6 || month == 9 || month == 11) {
+            if (day > 30) return "Error.";
+            if (day <= 9) DAY = "0" + (day + 1);
+            else DAY = Integer.toString(day + 1);
+            if (day == 30) {
+                DAY = "01";
+                month = month + 1;
+            }
+
+        }
+        else if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
+            if (day > 29) return "Error.";
+            if (day <= 9) DAY = "0" + (day + 1);
+            else DAY = Integer.toString(day + 1);
+            if (day == 29) {
+                DAY = "01";
+                month = month + 1;
+            }
+
+        } else {
+            if (day > 28) return "Error.";
+            if (day <= 9) DAY = "0" + (day + 1);
+            else DAY = Integer.toString(day + 1);
+            if (day == 28) {
+                DAY = "01";
+                month = month + 1;
+            }
+
+        }
+
+        MONTH = Integer.toString(month);
+        if (month <= 9) MONTH = "0" + (month);
+        if (month > 12) {
+            MONTH = "01";
+            year = year + 1;
+        }
+
+        YEAR = Integer.toString(year);
+        if (year < 1000) YEAR = "0" + (year);
+
+        if (year < 100) YEAR = "00" + (year);
+
+        if (year < 10) YEAR = "000" + (year);
+
+
+        return DAY + "." + MONTH + "." + YEAR;
     }
 }
