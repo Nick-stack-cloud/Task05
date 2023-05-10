@@ -40,6 +40,35 @@ package by.itstep.javatraining.revision.task;
 
 public class Task09 {
     public static String task09(int a1, int b1, int a2, int b2) {
-        return "?";
+
+        if (b1 == a1 || b2 == a2) return "error";
+        if (a1 > a2 && a1 > b2 && b1 > a2 && b1 > b2 || a2 > a1 && a2 > b1 && b2 > a1 && b2 > b1) return "empty set";
+        if (Math.max(a1, b1) > Math.max(a2, b2) && Math.min(a1, b1) < Math.min(a2, b2))
+            return "segment - [" + Math.min(a2, b2) +
+                    ", " + Math.max(a2, b2) + "]";
+        if (Math.max(a1, b1) < Math.max(a2, b2) && Math.min(a1, b1) > Math.min(a2, b2))
+            return "segment - [" + Math.min(a1, b1) + ", " + Math.max(a1, b1) + "]";
+
+        if (a1 == a2 && a1 < b1 && a1 < b2)
+            return "segment - [" + a1 + ", " + Math.min(b1, b2) + "]";
+        if (a1 == b2 && a1 < b1 && a1 < a2)
+            return "segment - [" + a1 + ", " + Math.min(b1, a2) + "]";
+        if (b1 == a2 && b1 < a1 && b1 < b2)
+            return "segment - [" + b1 + ", " + Math.min(a1, b2) + "]";
+        if (b1 == b2 && b1 < a1 && b1 < a2)
+            return "segment - [" + b1 + ", " + Math.min(a1, a2) + "]";
+        if (a1 == a2 && a1 > b1 && a1 > b2)
+            return "segment - [" + Math.max(b1, b2) + ", " + a1 + "]";
+        if (b1 == b2 && b1 > a1 && b1 > a2)
+            return "segment - [" + Math.max(a1, a2) + ", " + b1 + "]";
+
+        if (a1 == a2 || a1 == b2) return "point - " + a1;
+        if (b1 == a2 || b1 == b2) return "point - " + b1;
+
+        if (Math.max(a1, b1) >= Math.max(a2, b2))
+            return "segment - [" + Math.min(a1, b1) + ", " + Math.max(a2, b2) + "]";
+
+        return "segment - [" + Math.min(a2, b2) + ", " + Math.max(a1, b1) + "]";
+
     }
 }
