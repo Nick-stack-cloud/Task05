@@ -42,18 +42,17 @@ package by.itstep.javatraining.revision.task;
 
 public class Task07 {
     public static String task07(String color1, String color2) {
-       String red = "red";
-       String blue = "blue";
-       String yellow = "yellow";
-       try {
-           if (color1.equals(red))
-               return color2.equals(red) ? "red" : color2.equals(blue) ? "violet" : color2.equals(yellow) ? "orange" : "error";
-           if (color1.equals(blue))
-               return color2.equals(red) ? "violet" : color2.equals(blue) ? "blue" : color2.equals(yellow) ? "green" : "error";
-           if (color1.equals(yellow))
-               return color2.equals(red) ? "orange" : color2.equals(blue) ? "green" : color2.equals(yellow) ? "yellow" : "error";
-        return "error";
-       }catch (NullPointerException e){ return "error";}
+        String red = "red";
+        String blue = "blue";
+        String yellow = "yellow";
+        if (color1 == null || color2 == null) return "error";
 
+        if (color1.equals(red))
+            return color2.equals(red) ? "red" : color2.equals(blue) ? "violet" : color2.equals(yellow) ? "orange" : "error";
+        if (color1.equals(blue))
+            return color2.equals(red) ? "violet" : color2.equals(blue) ? "blue" : color2.equals(yellow) ? "green" : "error";
+        if (color1.equals(yellow))
+            return color2.equals(red) ? "orange" : color2.equals(blue) ? "green" : color2.equals(yellow) ? "yellow" : "error";
+        return "error";
     }
 }
