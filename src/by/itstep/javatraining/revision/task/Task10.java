@@ -28,11 +28,14 @@ package by.itstep.javatraining.revision.task;
 
 public class Task10 {
     public static int task10(int h, int a, int b) {
-        int day = 0;
-        if (a > b && h > b && b > 0) {
-            day = (h - a) / (a - b);
-        } else return 0;
-        return a >= h ? 1 : a == 6 && b == 3 && h == 10 ? 3 : day == 0 ? day + 2 : day + 1;
+//        int day = 0;
+//        if (a > b && h > b && b > 0) {
+//            day = (h - a) / (a - b);
+//        } else return 0;
+//        return a >= h ? 1 : a == 6 && b == 3 && h == 10 ? 3 : day == 0 ? day + 2 : day + 1;
+
+        return a > b && h > b && b > 0 ? (int) Math.ceil(((h - b) / ((double) a - b))) : 0;
+
+        //a == 6 && b == 3 && h == 10 - единственное исключение из формулы(
     }
-    //a == 6 && b == 3 && h == 10 - единственное исключение из формулы(
 }
